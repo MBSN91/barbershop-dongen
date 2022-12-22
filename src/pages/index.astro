@@ -1,0 +1,65 @@
+---
+import "@fontsource/oswald"
+import "@fontsource/open-sans"
+import { Image, Picture } from '@astrojs/image/components';
+
+import Logo from '../assets/logo.png'
+import Rating from '../component/grating'
+import Booking from '../component/booking'
+
+---
+
+
+
+<html lang="nl">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<main>
+			<section class="flex flex-col relative w-screen h-[85vh] imagebg bg-no-repeat bg-cover">
+				<div class="px-16 w-full h-full flex flex-col justify-center align-middle items-center">
+					<div class="absolute z-10 top-0 bottom-0 left-0 right-0 imageoverlay"></div>
+					<Image 
+						src={Logo}
+						alt='logo van barbershop dongen'
+						height={256}
+						width={256}
+						class='z-10' />
+					<h1 class=" from-neutral-600 font-title text-5xl text-primary font-bold z-10">DE BARBIER & KAPPER VAN DONGEN</h1>
+					<h2 class=" from-neutral-600 font-body text-base text-bg-secondary z-10">Barbershop Dongen is dé plek waar je jouw kapsel of baard onder handen kunt laten nemen.</h2>
+						<Rating />
+						<div class="flex flex-row gap-x-2">
+							<button class='z-10 bg-primary px-4 py-2 font-body text-base text-white rounded-sm'>Boek een afspraak</button>
+							<button class='z-10 bg-primary px-4 py-2 font-body text-base text-white rounded-sm'>Bekijk de prijzen</button>
+						</div>
+				</div>		
+			</section>
+
+			<section class="flex flex-col w-screen h-full justify-center align-middle items-center">
+				<Booking />
+				</section>
+		</main>
+	</body>
+</html>
+
+<style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.imagebg{
+	background-image: url('../assets/kapperstoel-barbershop-dongen.jpeg');
+	background-color: rgba(0, 0, 0, 0.2);
+	background-position: center;
+}
+
+.imageoverlay{
+	z-index: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+</style>
