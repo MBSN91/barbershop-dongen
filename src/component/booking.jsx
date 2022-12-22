@@ -9,6 +9,8 @@ dotenv.config();
  //variabelen waar de keys gesetworden
  const username = process.env.SECRET_YOUCANBOOKME_USERNAME;
  const password = process.env.SECRET_YOUCANBOOKME_PASSWORD;
+ const profileid = proces.env.SECRET_YOUCANBOOKME_PROFILE_ID;
+ const appointmentid = proces.env.SECRET_YOUCANBOOKME_BOOK_BAARD ;
 
  //converteren van de strings naar whatever it is
  const authString = `${username}:${password}`;
@@ -18,8 +20,8 @@ dotenv.config();
 export default function booking() {      
         //form data
         const [formData, setFormData] = useState({
-          profileId:'db8ccd0b-e213-41d6-abc2-dd79697c7ae1',
-          appointmentTypesIds: ['jsid6527227'],
+          profileId: `${profileid}`,
+          appointmentTypesIds: `${appointmentid}` ,
           units: 1,
           startsAt:'',
           timeZone:'Europe/Amsterdam',
