@@ -9,8 +9,8 @@ dotenv.config();
  //variabelen waar de keys gesetworden
  const username = process.env.SECRET_YOUCANBOOKME_USERNAME;
  const password = process.env.SECRET_YOUCANBOOKME_PASSWORD;
- const profileid = proces.env.SECRET_YOUCANBOOKME_PROFILE_ID;
- const appointmentid = proces.env.SECRET_YOUCANBOOKME_BOOK_BAARD ;
+ const profileid = process.env.SECRET_YOUCANBOOKME_PROFILE_ID;
+ const appointmentid = process.env.SECRET_YOUCANBOOKME_BOOK_BAARD ;
 
  //converteren van de strings naar whatever it is
  const authString = `${username}:${password}`;

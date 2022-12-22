@@ -10,7 +10,14 @@ import Star4point7 from '../assets/rating4/star-47.svg'
 import Star4point8 from '../assets/rating4/star-48.svg'
 import Star4point9 from '../assets/rating4/star-49.svg'
 
-const data = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${import.meta.env.SECRET_PLACE_ID}&fields=user_ratings_total,rating&key=${import.meta.env.SECRET_GOOGLE_MAPS_API_KEY}`)
+//importeren van keys die niet zichtbaar mogen zijn
+import dotenv from 'dotenv';
+dotenv.config();
+
+const gplace = process.env.SECRET_PLACE_ID;
+const gapi = process.env.SECRET_GOOGLE_MAPS_API_KEY;
+
+const data = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${gplace}&fields=user_ratings_total,rating&key=${gapi}`)
    .then((response) => response.json())
 
 
